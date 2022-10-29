@@ -1,4 +1,4 @@
-# Deep Fried Shrimp
+# Plimp Fried Rice
 
 Did you ever feel like the plasma shrimp didn't hit hard enough?
 
