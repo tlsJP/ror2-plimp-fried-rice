@@ -24,6 +24,7 @@
       <NoWarn>NU1701</NoWarn>
     </PackageReference>
     <PackageReference Include="R2API" Version="4.3.5" />
+    <RootNamespace>com.thejpaproject</RootNamespace>
   </ItemGroup>
 
   <ItemGroup>
