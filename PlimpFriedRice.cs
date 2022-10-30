@@ -22,7 +22,7 @@ namespace com.thejpaproject
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "com.thejpaproject";
         public const string PluginName = "PlimpFriedRice";
-        public const string PluginVersion = "1.0.1";
+        public const string PluginVersion = "1.0.2";
 
         public void Awake()
         {
