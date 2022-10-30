@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "msbuild",
+      "problemMatcher": ["$msCompile"],
+      "group": "build",
+      "label": "Build: PlimpFriedRice.csproj",
+      "detail": "Build the PlimpFriedRice.csproj project using dotnet build"
+    },
+    {
+      "label": "deploy",
+      "command": "Copy-Item",
+      "type": "shell",
+      "args": [
+        "bin/Debug/netstandard2.0/PlimpFriedRice.dll",
+        "C:/Program Files (x86)/Steam/steamapps/common/Risk of Rain 2/BepInEx/plugins/PlimpFriedRice"
+      ],
+      "group": "build",
+      "dependsOn": "Build: PlimpFriedRice.csproj",
+      "dependsOrder": "sequence"
+    }
+  ]
+}
