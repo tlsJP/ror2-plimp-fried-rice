@@ -7,7 +7,8 @@ using R2API.Utils;
 
 using System.IO;
 using System.Reflection;
-
+using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace com.thejpaproject
 {
@@ -46,36 +47,69 @@ namespace com.thejpaproject
             }
 
 
-            On.RoR2.HealthComponent.TakeDamage += OnTakeDamage;
 
+            var missileVoidProjectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/MissileVoid/MissileVoidProjectile.prefab").WaitForCompletion();
+            var controller = missileVoidProjectilePrefab.GetComponent<RoR2.Projectile.MissileController>;
+            var missileVoid = RoR2.ItemCatalog.FindItemIndex(RoR2.DLC1Content.Items.MissileVoid.name);
+
+            On.RoR2.Projectile.MissileController.Awake += FuckMeUp;
+            On.RoR2.Projectile.ProjectileController.Awake += FuckMeUp2;
+            On.RoR2.Projectile.ProjectileController.OnTriggerEnter += OnTrigger;
+            On.RoR2.Projectile.ProjectileController.OnEnable += OnEnable;
+            On.RoR2.Projectile.ProjectileController.Start += Start;
+
+            // On.RoR2.HealthComponent.TakeDamage += OnTakeDamage;
 
 
         }
 
+        private void Start(On.RoR2.Projectile.ProjectileController.orig_Start orig, RoR2.Projectile.ProjectileController self)
+        {
+            orig(self);
+             _logger.LogInfo($" {self.name} - Start");
+            RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
+        }
 
+        private void OnEnable(On.RoR2.Projectile.ProjectileController.orig_OnEnable orig, RoR2.Projectile.ProjectileController self)
+        {
+            orig(self);
+
+            _logger.LogInfo($" {self.name} - OnEnable");
+            RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
+        }
+
+        private void FuckMeUp(On.RoR2.Projectile.MissileController.orig_Awake orig, RoR2.Projectile.MissileController self)
+        {
+            orig(self);
+
+            _logger.LogInfo($" {self.name} - fuck me up!");
+            RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
+        }
+
+        private void FuckMeUp2(On.RoR2.Projectile.ProjectileController.orig_Awake orig, global::RoR2.Projectile.ProjectileController self)
+        {
+            orig(self);
+
+            _logger.LogInfo($" {self.name} - fuck me up2!");
+            RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
+        }
+
+        private void OnTrigger(On.RoR2.Projectile.ProjectileController.orig_OnTriggerEnter orig, global::RoR2.Projectile.ProjectileController self, Collider collider)
+        {
+            orig(self, collider);
+
+            _logger.LogInfo($" {self.name} - onTrigger !");
+            RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
+        }
 
         private void OnTakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, RoR2.HealthComponent self, RoR2.DamageInfo damageInfo)
         {
             orig(self, damageInfo);
-            _logger.LogInfo("play?");
-            // AkSoundEngine.PostEvent(132404053, PlayerCharacterMasterController.instances[0].master.resolvedBodyInstance);
-
-
 
             RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
 
-            // AkSoundEngine.PostEvent(661497120, self.gameObject);
-
-
-
-            // RoR2.Util.PlaySound("Play_item_void_critGlasses", self.gameObject);
-            // RoR2.Util.PlaySound("Play_item_void_critGlasses", self.gameObject);
-            // RoR2.Util.PlaySound("Play_item_void_critGlasses", self.gameObject);
-            // RoR2.Util.PlaySound("Play_item_void_critGlasses", self.gameObject);
-
 
         }
-
 
 
     }
