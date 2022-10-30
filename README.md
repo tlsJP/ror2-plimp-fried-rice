@@ -1,8 +1,10 @@
 # Plimp Fried Rice
 
-Did you ever feel like the plasma shrimp didn't hit hard enough?
+## Did you ever feel like the plasma shrimp didn't hit hard enough?
 
-![Plasma Shrimp](plimp.png)
+| | |
+|-|-|
+| ![Plasma Shrimp](plimp.png) | This mod makes no changes to the plasma shrimp's behavior, it just makes it painfully louder when it fires. |
 
 ## Changelog
 
