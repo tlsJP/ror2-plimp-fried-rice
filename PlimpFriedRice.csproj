@@ -9,13 +9,22 @@
   </PropertyGroup>
 
 
-    <ItemGroup>
+  <ItemGroup>
     <None Remove="plimpfriedrice.bnk" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="plimpfriedrice.bnk" />
   </ItemGroup>
+
+  <Target Name="CreateBundle" AfterTargets="AfterBuild">
+    <Copy SourceFiles="manifest.json" DestinationFolder="out" />
+    <Copy SourceFiles="README.md" DestinationFolder="out" />
+    <Copy SourceFiles="icon.png" DestinationFolder="out" />
+    <Copy SourceFiles="bin/Debug/netstandard2.0/PlimpFriedRice.dll" DestinationFolder="out" />
+    <ZipDirectory Overwrite="True" SourceDirectory="out" DestinationFile="$(ProjectName).zip" />	
+  </Target>
+  
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />

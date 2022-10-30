@@ -4,7 +4,7 @@
 
 | Plimp | What does it Do? |
 |-------|------------------|
-| ![Plasma Shrimp](plimp.png) | This mod makes no changes to the plasma shrimp's behavior, it just makes it painfully louder when it fires. |
+| ![Plasma Shrimp](icon.png) | This mod makes no changes to the plasma shrimp's behavior, it just makes it painfully louder when it fires. |
 
 ## Changelog
 
