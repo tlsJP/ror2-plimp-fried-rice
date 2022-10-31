@@ -22,16 +22,17 @@
     <Copy SourceFiles="README.md" DestinationFolder="out" />
     <Copy SourceFiles="icon.png" DestinationFolder="out" />
     <Copy SourceFiles="bin/Debug/netstandard2.0/PlimpFriedRice.dll" DestinationFolder="out" />
-    <ZipDirectory Overwrite="True" SourceDirectory="out" DestinationFile="$(ProjectName).zip" />	
+    <ZipDirectory Overwrite="True" SourceDirectory="out" DestinationFile="$(ProjectName).zip" />
   </Target>
-  
+
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <PackageReference Include="MMHOOK.RoR2" Version="2022.9.20" >
-      <NoWarn>NU1701</NoWarn></PackageReference>
+    <PackageReference Include="MMHOOK.RoR2" Version="2022.9.20">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
     <PackageReference Include="R2API" Version="4.4.1" />
     <PackageReference Include="UnityEngine.Modules" Version="2019.4.26" IncludeAssets="compile" />
   </ItemGroup>
