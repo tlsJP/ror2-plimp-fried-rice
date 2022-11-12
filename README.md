@@ -18,6 +18,7 @@
 **1.1.0**
 
 - Enable in-game toggle
+- Now requires RiskOfOptions
 
 **1.0.0**
 
