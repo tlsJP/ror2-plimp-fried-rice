@@ -24,7 +24,7 @@ namespace com.thejpaproject
     public const string PluginGUID = PluginAuthor + "." + PluginName;
     public const string PluginAuthor = "com.thejpaproject";
     public const string PluginName = "PlimpFriedRice";
-    public const string PluginVersion = "1.0.2";
+    public const string PluginVersion = "1.1.1";
 
     // private static readonly bool s_rooEnabled = Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions");
 
