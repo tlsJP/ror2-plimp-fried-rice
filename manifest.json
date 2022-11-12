@@ -1,8 +1,8 @@
 ﻿{
-  "name": "plimp_fried_rice",
+  "name": "Plimp_Fried_Rice",
   "authorName": "JP",
   "networkMode": "client",
-  "version_number": "1.0.2",
+  "version_number": "1.1.0",
   "website_url": "https://github.com/tlsJP/ror2-plimp-fried-rice",
   "description": "Deep Fried Plasma Shrimp",
   "displayName": "Plimp Fried Rice",
