@@ -16,7 +16,10 @@
         "bin/Debug/netstandard2.0/PlimpFriedRice.dll",
         "C:/Program Files (x86)/Steam/steamapps/common/Risk of Rain 2/BepInEx/plugins/PlimpFriedRice"
       ],
-      "group": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "dependsOn": "Build: PlimpFriedRice.csproj",
       "dependsOrder": "sequence"
     }

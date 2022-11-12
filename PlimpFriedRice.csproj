@@ -8,6 +8,17 @@
     <AssemblyName>PlimpFriedRice</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Ror2Dir>C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2</Ror2Dir>
+    <BepInExDir>$(Ror2Dir)\BepInex</BepInExDir>
+    <PluginsDir>$(BepInExDir)\plugins</PluginsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include = "RiskOfOptions">
+      <HintPath>$(PluginsDir)\Rune580-Risk_Of_Options\RiskOfOptions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="plimpfriedrice.bnk" />
@@ -15,6 +26,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="plimpfriedrice.bnk" />
+    <EmbeddedResource Include="icon_sm.png" LogicalName="plimp"/>
   </ItemGroup>
 
   <Target Name="CreateBundle" AfterTargets="AfterBuild">
@@ -25,7 +37,6 @@
     <ZipDirectory Overwrite="True" SourceDirectory="out" DestinationFile="$(ProjectName).zip" />
   </Target>
 
-
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
@@ -35,6 +46,7 @@
     </PackageReference>
     <PackageReference Include="R2API" Version="4.4.1" />
     <PackageReference Include="UnityEngine.Modules" Version="2019.4.26" IncludeAssets="compile" />
+    <Reference Include="RiskOfOptions" Private="False" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
