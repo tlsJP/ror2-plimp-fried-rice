@@ -9,6 +9,7 @@
   "DisplayName": "Plimp Fried Rice",
   "dependencies": [
     "bbepis-BepInExPack-5.4.9",
-    "RiskofThunder-HookGenPatcher-1.2.1"
+    "RiskofThunder-HookGenPatcher-1.2.1",
+    "Rune580-Risk_Of_Options-2.4.2"
   ]
 }

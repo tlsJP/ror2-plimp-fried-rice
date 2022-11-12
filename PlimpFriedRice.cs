@@ -1,17 +1,18 @@
 
 using BepInEx;
 using BepInEx.Logging;
+using BepInEx.Bootstrap;
 using R2API;
 using R2API.Networking;
 using R2API.Utils;
-
+using RiskOfOptions;
 using System.IO;
 using System.Reflection;
 
 namespace com.thejpaproject
 {
   [BepInDependency(R2API.R2API.PluginGUID)]
-
+  [BepInDependency("com.rune580.riskofoptions")]
   [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
 
   [R2APISubmoduleDependency(nameof(SoundAPI), nameof(ItemAPI), nameof(NetworkingAPI))]
@@ -24,9 +25,16 @@ namespace com.thejpaproject
     public const string PluginName = "PlimpFriedRice";
     public const string PluginVersion = "1.0.2";
 
+    private static readonly bool s_rooEnabled = Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions");
+
     public void Awake()
     {
       _logger = BepInEx.Logging.Logger.CreateLogSource("PlimpFriedRice");
+
+      if (s_rooEnabled)
+      {
+        ConfigureRiskOfOptions();
+      }
 
 
       _logger.LogInfo("trying...");
@@ -56,6 +64,11 @@ namespace com.thejpaproject
         RoR2.Util.PlaySound("deepfriedplimp", self.gameObject);
       }
 
+    }
+
+    void ConfigureRiskOfOptions()
+    {
+      ModSettingsManager.SetModDescription("Enable/disable plimp fried rice");
     }
 
   }
