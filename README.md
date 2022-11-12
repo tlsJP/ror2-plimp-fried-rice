@@ -1,5 +1,7 @@
 # Plimp Fried Rice
 
+Get it here : [Plimp Fried Rice @ Thunderstore.io](https://thunderstore.io/package/TeamNinjaDSM/Plimp_Fried_Rice/)
+
 ## Did you ever feel like the plasma shrimp didn't hit hard enough?
 
 | Plimp                                                                                 | What does it Do?                                                                                            |
@@ -14,6 +16,10 @@
 - [Rune580's Risk of Options](https://thunderstore.io/package/Rune580/Risk_Of_Options) Installed in `(Risk Of Rain 2 game folder)/BepInEx/plugins`
 
 ## Changelog
+
+**1.1.1**
+
+- Manifest was updated so thunderstore has new URL https://thunderstore.io/package/TeamNinjaDSM/Plimp_Fried_Rice/
 
 **1.1.0**
 
